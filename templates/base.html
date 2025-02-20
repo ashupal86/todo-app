@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+    <nav class="nav justify-content-center ">
+        
+         <h1 class="nav-item">TODO APP</h1>
+        
+      </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {% if messages[0] == "Welcome to the Todo App" %}
+        <strong> {{ messages[0] }}</strong>
+
+        {% else %}
+        
+        <strong>Alert!</strong> {{ messages[0] }}
+        {% endif %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    {% endwith %}
+{% block content %}
+
+{% endblock %}
+
+    <footer class="fixed-bottom  text-center p-2">Made With ❤️ by ASHU</footer>
+
+
+
+    <script src="/js/bootstrap.js"></script>
+</body>
+</html>
